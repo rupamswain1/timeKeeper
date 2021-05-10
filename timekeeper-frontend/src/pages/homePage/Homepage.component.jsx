@@ -1,5 +1,6 @@
 import React from 'react'
 import TotalTargetTime from '../../components/totalTargetTime/TotalTargetTime.component';
+import BreakButtons from '../../components/breakButtons/BreakButtons.component';
 import './HomePage.style.scss'
 const HomePage=()=>{
     return(
@@ -8,7 +9,7 @@ const HomePage=()=>{
                 <TotalTargetTime/>
             </div>
             <div className='switchButtonsContainer'>
-                SwitchButtons
+                <BreakButtons/>
             </div>
             <div className='taskListContainer'>
                 TaskListContainer
