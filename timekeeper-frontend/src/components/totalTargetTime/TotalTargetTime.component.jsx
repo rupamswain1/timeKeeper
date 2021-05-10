@@ -1,4 +1,7 @@
 import React,{useState} from 'react';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import CheckIcon from '@material-ui/icons/Check';
 import './TotalTargetTime.scss' 
 const TotalTargetTime=()=>{
 
@@ -37,6 +40,15 @@ const TotalTargetTime=()=>{
             <input className='timeBox' placeholder='S' type='text' name='5' onFocus={clearTxt} id='5' onfocus='this.value=""' value={timeArr[5]} maxlength='1' onChange={handleChange}>
             </input>
                 <div className='timerText'>S</div>
+            <Button
+            variant="contained"
+            color="primary"
+            className='saveTimeBtn'
+            startIcon={<CheckIcon />}
+            >
+                Save Time
+            </Button>
+           
 
         </div>
 
