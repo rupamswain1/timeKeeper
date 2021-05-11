@@ -1,0 +1,18 @@
+.toDoMainContainer{
+    position: relative;
+   // border-width: 1px;
+    //border-style: solid;;
+    width: 30%;
+    border-radius: 15px;
+    left:5%;
+    top:10%;
+    height: 80%;
+    box-shadow: -2px 16px 15px rgb(100, 98, 98);
+    overflow-x: hidden;
+   // background-color: blueviolet;
+   .addIconButton{
+       position: relative;
+       left:85%;
+       bottom:-75%;
+   }
+}

@@ -1,6 +1,8 @@
 import React from 'react'
 import TotalTargetTime from '../../components/totalTargetTime/TotalTargetTime.component';
 import BreakButtons from '../../components/breakButtons/BreakButtons.component';
+import ToDoTaskContainer from '../../components/toDoTaskContainer/ToDoTaskContainer.component'
+import CompletedTaskListContainer from '../../components/completedTaskListContainer/CompletedTaskListContainer.component'
 import './HomePage.style.scss'
 const HomePage=()=>{
     return(
@@ -12,7 +14,8 @@ const HomePage=()=>{
                 <BreakButtons/>
             </div>
             <div className='taskListContainer'>
-                TaskListContainer
+                <ToDoTaskContainer className='toDoListMain'/>
+                <CompletedTaskListContainer className='completedTaskListMain'/>
             </div>
             <div className='reportButtonContainer'>
                 Report Button
