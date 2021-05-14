@@ -8,7 +8,7 @@
     top:10%;
     height: 80%;
     box-shadow: -2px 16px 15px rgb(100, 98, 98);
-    overflow-x: hidden;
+    display: block;
    // background-color: blueviolet;
    .addIconButton{
        position: relative;
@@ -19,25 +19,48 @@
        position: relative;
        top:3%;
        //left:10vw;
-       display: inline;
-      left: 6vw;
+       display: block;
+      left: 4vw;
        
        width:100%;
        display: flex;
-       .addTaskText{
+       .addTaskContainer{
            position: relative;
-           box-shadow: -2px 16px 15px rgb(100, 98, 98);
-           //left:9vw;
-           background-color: rgb(179, 234, 241);
-           border-radius: 10px;
-           outline: none;
-           
-           
+           display: flex;
+        .addTaskText{
+            position: relative;
+            //box-shadow: -2px 16px 15px rgb(100, 98, 98);
+            //left:9vw;
+            background-color: rgb(179, 234, 241);
+            border-radius: 10px;
+            outline: none;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            
+        }
+        .saveTaskBtn{
+            border-radius: 10px;
+            border-top-left-radius:0px ;
+            border-bottom-left-radius: 0px;
+            //box-shadow: -2px 16px 15px rgb(100, 98, 98);
+         }
+        
        }
-       .addItemIconButton{
-        position: relative;
-        left:0vw;
-       }
-     
+       
+            
    }
+   .addedTaskListContainer{
+        border-style: solid;
+        display: block;
+        position: relative;
+        width:95%;
+        top:5%;
+        left: 2%;
+        height: 68%;
+        border-radius: 10px;
+        border-width: 1px;
+        overflow-x: scroll;
+        overflow-x: hidden;
+       
+    }
 }
