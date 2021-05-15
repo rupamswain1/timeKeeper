@@ -12,6 +12,7 @@ import FastfoodIcon from '@material-ui/icons/Fastfood';
 import EjectIcon from '@material-ui/icons/Eject';
 import './BreakButtons.style.scss';
 import Tooltip from '@material-ui/core/Tooltip';
+import LibraryAddIcon from '@material-ui/icons/LibraryAdd';
 import {startBreak} from '../../redux/breakButton/BreakButton.action';
 const BreakButtons=()=>{
 
@@ -55,15 +56,18 @@ const BreakButtons=()=>{
            
             
             <Tooltip title='Food'>
-                <button className={`brakButton-tea-${breakData['food'].isActive?'active':''}`} onClick={()=>dispatchAction('food')}><FreeBreakfastIcon style={{fill: "white"}} fontSize="large"/></button>
+            <button className={`brakButton-food-${breakData['tea'].isActive?'active':''}`} onClick={()=>dispatchAction('tea')}><FastfoodIcon style={{fill: "white"}} fontSize="large"/></button>
             </Tooltip>
             
             
             <Tooltip title='Tea/Coffee'>
-                <button className={`brakButton-food-${breakData['tea'].isActive?'active':''}`} onClick={()=>dispatchAction('tea')}><FastfoodIcon style={{fill: "white"}} fontSize="large"/></button>
+                <button className={`brakButton-tea-${breakData['food'].isActive?'active':''}`} onClick={()=>dispatchAction('food')}><FreeBreakfastIcon style={{fill: "white"}} fontSize="large"/></button>
             </Tooltip>
            
-            
+            <Tooltip title='Miscelaneous Task'>
+                <button className={`brakButton-misc-${breakData['miscelaneous'].isActive?'active':''}`} onClick={()=>dispatchAction('miscelaneous')}><LibraryAddIcon style={{fill: "white"}} fontSize="large"/></button>
+            </Tooltip>
+
             <Tooltip title='Release All'>
                  <button className={`brakButton-eject-${breakData['releaseAll'].isActive?'active':''}`} onClick={()=>dispatchAction('releaseAll')}><EjectIcon style={{fill: "white"}} fontSize="large"/></button>
             </Tooltip>

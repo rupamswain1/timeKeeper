@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage';
 
 import {TotalTimeReducer} from './totalTime/TotalTime.reducer';
 import {BreakButtonReducer} from './breakButton/BreakButton.reducer';
+import {TaskReducer} from './task/Task.reducer';
 const persistConfig={
     key:'root',
     storage,
@@ -13,6 +14,7 @@ const persistConfig={
 export const rootReducer=combineReducers({
     TotalTimeReducer:TotalTimeReducer,
     BreakButtonReducer:BreakButtonReducer,
+    TaskReducer:TaskReducer,
 });
 
 export const persistReducer1=persistReducer(persistConfig,rootReducer);

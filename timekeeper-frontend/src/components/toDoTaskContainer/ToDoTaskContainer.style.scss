@@ -9,7 +9,20 @@
     height: 80%;
     box-shadow: -2px 16px 15px rgb(100, 98, 98);
     display: block;
-   // background-color: blueviolet;
+    background-color: rgb(238, 153, 113);
+   .headingToDo{
+        position: relative;
+        left:38%;
+        //border-style: groove;
+        border-radius: 5px;
+        top:2%;
+        padding-left: 3%;
+        padding-right: 3%;
+        background-color: rgb(156, 200, 241);
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 120%;
+    }
    .addIconButton{
        position: relative;
        left:85%;
@@ -24,21 +37,32 @@
        
        width:100%;
        display: flex;
+     
        .addTaskContainer{
            position: relative;
            display: flex;
+           width:100%;
         .addTaskText{
             position: relative;
             //box-shadow: -2px 16px 15px rgb(100, 98, 98);
-            //left:9vw;
+            right:11%;
+            width: 78%;
             background-color: rgb(179, 234, 241);
             border-radius: 10px;
             outline: none;
             border-top-right-radius: 0px;
             border-bottom-right-radius: 0px;
+            color: black;
+            font-size: 100%;
+           
             
         }
+        ::placeholder{
+            color: rgb(20, 5, 85);
+            font-weight:bold;
+        }
         .saveTaskBtn{
+            right:11%;
             border-radius: 10px;
             border-top-left-radius:0px ;
             border-bottom-left-radius: 0px;
@@ -56,7 +80,7 @@
         width:95%;
         top:5%;
         left: 2%;
-        height: 68%;
+        height: 75%;
         border-radius: 10px;
         border-width: 1px;
         overflow-x: scroll;

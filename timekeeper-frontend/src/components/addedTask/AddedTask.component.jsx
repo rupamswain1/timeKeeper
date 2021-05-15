@@ -1,10 +1,14 @@
 import React from 'react';
+import {useSelector,useDispatch} from 'react-redux';
+import {removeTask,pauseTask,startTask,completeTask} from '../../redux/task/Task.action'
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
 import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
 import CancelIcon from '@material-ui/icons/Cancel';
-const AddedTask=({completed,bgColor})=>{
-
+import Tooltip from '@material-ui/core/Tooltip';
+const AddedTask=({completed,bgColor,taskName,paused,percentage,type})=>{
+    
+    const dispatch=useDispatch();
     const containerStyle={
         position:'relative',
         height:'15%',
@@ -17,7 +21,7 @@ const AddedTask=({completed,bgColor})=>{
 
     const fillerStyle = {
         height: '100%',
-        width: `${completed}%`,
+        width: `${percentage}%`,
         backgroundColor: `${bgColor}`,
         borderRadius: 'inherit',
         textAlign: 'right',
@@ -27,7 +31,8 @@ const AddedTask=({completed,bgColor})=>{
 
       const labelStyle = {
         position:'absolute',
-        left:'4vw',
+        top:'1vh',
+        left:'6vw',
         color: 'black',
         fontWeight: 'bold',
         'z-index':-1,
@@ -40,45 +45,78 @@ const AddedTask=({completed,bgColor})=>{
         right:'50%',
         top:'10%',
         textAlign:'right',
+
+        'font-weight':'bold',
       }
       const iconsListStyle={
         position:'absolute',
+        top:'0.5vh',
         display:'flex',
-        'padding-left':'7vw'
+        'padding-left':'8.5vw',
+        textAlign: 'right'
       }
       const taskNameStyle={
           position:'absolute',
+          top:'1vh',
           color:'black',
           right:'1.9vw',
+          'text-align':'left',
+          width:'11vw',
+          'margin-left':'10%',
       }
       
 
     return(
+        <Tooltip title={taskName.toUpperCase()} placement="right-start" arrow>
         <div className='taskMainContainer' style={containerStyle}>
             <div className='contentContainer' style={fillerStyle}>
                
             </div>
             <div className='taskContent' style={taskContentStyle}>
-                <span style={labelStyle}>{`${completed}%`}</span>
+                <span style={labelStyle}>{`${percentage}%`}</span>
                 <div className='taskName' style={taskNameStyle}>
-                    DemoName12345678
+                    {`${taskName.toUpperCase().slice(0,14)}${taskName.length>14?'...':''}`}
                 </div>
+                {completed?'':
+            
+                
                 <div className='iconsList' style={iconsListStyle}>
-                    <div className='playButton'>
-                        <PlayCircleOutlineIcon/>
-                    </div>
-                    <div className='playButton'>
-                        <PauseCircleOutlineIcon/>
-                    </div>
-                    <div className='completedButton'>
-                        <DoneOutlineIcon/>
-                    </div>
-                    <div className='removeButton'>
-                        <CancelIcon/>
-                    </div>
+                    {paused
+                        ?
+                            <Tooltip title={`Start ${taskName.toUpperCase()}`}  arrow>
+                                <div className='playButton'>
+                                    <PlayCircleOutlineIcon key={`${taskName}-playBtn`} onClick={()=>dispatch(startTask(taskName))}/>
+                                </div>
+                            </Tooltip>
+                        :
+                            <Tooltip title={`Pause ${taskName.toUpperCase()}`}  arrow>
+                                <div className='playButton'>
+                                    <PauseCircleOutlineIcon key={`${taskName}-pauseBtn`} onClick={()=>dispatch(pauseTask(taskName))}/>
+                                </div>
+                            </Tooltip>
+                    }
+                    
+                    {type?'':
+                        <Tooltip title={`Mark Complete ${taskName.toUpperCase()}`}  arrow>
+                            <div className='completedButton'>
+                                <DoneOutlineIcon onClick={()=>dispatch(completeTask(taskName))}/>
+                            </div>
+                        </Tooltip>
+                    }
+                    {type?'':
+                        <Tooltip title={`Remove ${taskName.toUpperCase()}`}  arrow>
+                            <div className='removeButton'>
+                                <CancelIcon key={`${taskName}-cancelBtn`} onClick={()=>dispatch(removeTask(taskName))}/>
+                            </div>
+                        </Tooltip>
+                    }
+                    
+                    
                 </div>
+                }
             </div>
         </div>
+        </Tooltip>
     )
 }
 
