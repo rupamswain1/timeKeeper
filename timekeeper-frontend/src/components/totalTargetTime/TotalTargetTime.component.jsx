@@ -25,7 +25,7 @@ const TotalTargetTime=()=>{
                 
             }
             console.log(timeState)
-        }, 10000);
+        }, 1000);
         return () => clearInterval(interval);
       }, [timeState.length]);
     //console.log(timeArr)

@@ -6,6 +6,8 @@ import ToDoTaskContainer from '../../components/toDoTaskContainer/ToDoTaskContai
 import CompletedTaskListContainer from '../../components/completedTaskListContainer/CompletedTaskListContainer.component';
 import Button from '@material-ui/core/Button';
 import {submitDataStart} from '../../redux/submitData/SubmitData.action'
+import DoughnutChart from '../../doughnutChart/DoughnutChart.component'
+import TimeComparisonBarChart from '../../components/timeComparisonBarChart/timeComparisonBarChart';
 import './HomePage.style.scss'
 const HomePage=()=>{
     const dispatch=useDispatch();
@@ -28,7 +30,8 @@ const HomePage=()=>{
                 </Button>
             </div>
             <div className='graphsContainer'>
-                Graphs
+                <DoughnutChart/>
+                <TimeComparisonBarChart/>
             </div>
         </div>
     )
