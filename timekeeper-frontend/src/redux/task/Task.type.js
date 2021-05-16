@@ -5,5 +5,6 @@ const TaskType={
     START_TASK:'START_TASK',
     COMPLETED_TASK:'COMPLETED_TASK',
     ADD_BREAK_TASK:'ADD_BREAK_TASK',
+    REMOVE_ALL_TASK:'REMOVE_ALL_TASK',
 }
 export default TaskType;

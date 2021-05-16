@@ -1,9 +1,40 @@
 import TotalTimeType from './TotalTime.type';
 
 
-export const saveTotalTime=(timeArr)=>{
+export const saveTotalTime=(timeInSec)=>{
     return({
         type: TotalTimeType.SAVE_TOTAL_TIME,
-        payload: timeArr
+        payload: timeInSec
         })
+}
+
+export const startCountDown=(seconds)=>{
+    return{
+        type:TotalTimeType.START_COUNTDOWN,
+        seconds:seconds,
+    }
+}
+
+export const pauseCountDown=()=>{
+    return{
+        type:TotalTimeType.PAUSE_COUNTDOWN,
+    }
+}
+
+export const setCountDownTrue=()=>{
+    return {
+        type:TotalTimeType.SET_COUNTDOWN_TRUE,
+    }
+}
+
+export const updateCountDown=()=>{
+    return{
+        type:TotalTimeType.UPDATE_COUNTDOWN
+    }
+}
+
+export const removeAllTime=()=>{
+    return{
+        type:TotalTimeType.REMOVE_ALL_TIME,
+    }
 }

@@ -32,7 +32,7 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type})=>{
       const labelStyle = {
         position:'absolute',
         top:'1vh',
-        left:'6vw',
+        left:'4.5vw',
         color: 'black',
         fontWeight: 'bold',
         'z-index':-1,
@@ -103,7 +103,7 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type})=>{
                             </div>
                         </Tooltip>
                     }
-                    {type?'':
+                    {type?'':percentage>0?'':
                         <Tooltip title={`Remove ${taskName.toUpperCase()}`}  arrow>
                             <div className='removeButton'>
                                 <CancelIcon key={`${taskName}-cancelBtn`} onClick={()=>dispatch(removeTask(taskName))}/>
@@ -111,7 +111,7 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type})=>{
                         </Tooltip>
                     }
                     
-                    
+                     
                 </div>
                 }
             </div>

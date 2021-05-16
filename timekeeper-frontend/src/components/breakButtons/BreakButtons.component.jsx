@@ -56,12 +56,12 @@ const BreakButtons=()=>{
            
             
             <Tooltip title='Food'>
-            <button className={`brakButton-food-${breakData['tea'].isActive?'active':''}`} onClick={()=>dispatchAction('tea')}><FastfoodIcon style={{fill: "white"}} fontSize="large"/></button>
+            <button className={`brakButton-food-${breakData['food'].isActive?'active':''}`} onClick={()=>dispatchAction('food')}><FastfoodIcon style={{fill: "white"}} fontSize="large"/></button>
             </Tooltip>
             
             
             <Tooltip title='Tea/Coffee'>
-                <button className={`brakButton-tea-${breakData['food'].isActive?'active':''}`} onClick={()=>dispatchAction('food')}><FreeBreakfastIcon style={{fill: "white"}} fontSize="large"/></button>
+                <button className={`brakButton-tea-${breakData['tea'].isActive?'active':''}`} onClick={()=>dispatchAction('tea')}><FreeBreakfastIcon style={{fill: "white"}} fontSize="large"/></button>
             </Tooltip>
            
             <Tooltip title='Miscelaneous Task'>

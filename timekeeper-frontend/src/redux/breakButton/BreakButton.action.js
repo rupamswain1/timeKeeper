@@ -14,9 +14,3 @@ export const pauseBreak=(breakName)=>{
     breakName:breakName,}
 }
 
-export const getBreakColor=(breakName)=>{
-    return{
-        type:BreakButtonType.GET_BREAK_COLOR,
-        breakName:breakName
-    }
-}

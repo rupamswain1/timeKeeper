@@ -9,9 +9,11 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import AddedTask from '../addedTask/AddedTask.component';
 import {addTask} from '../../redux/task/Task.action';
+
 const ToDoTaskContainer=()=>{
 
     const {taskList}=useSelector(state=>state.TaskReducer);
+    const {key,originalTime,totalTime}=useSelector(state=>state.TaskReducer);
     const dispatch=useDispatch();
     const[taskName,setTaskName]=useState();
     console.log(taskList)
@@ -23,7 +25,7 @@ const ToDoTaskContainer=()=>{
         setTaskName('');
         document.getElementById('outlined-basic').blur();
     }
-
+   
     return(
         <div className='toDoMainContainer'>
             <span className='headingToDo'>Task List</span>
