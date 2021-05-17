@@ -34,6 +34,7 @@ const TotalTargetTime=()=>{
             timeArr=SecondsToArray(totalTime[key][getFullDate()]);
             setTimeState(timeArr)
         }
+       
     }
     const handleChange=event=>{
             validatePrevValue();
@@ -66,6 +67,7 @@ const TotalTargetTime=()=>{
             return(date.toString()+month.toString()+year.toString());
     }
     const submitTime=()=>{
+        console.log(timeArr)
         setTimeState(timeArr)
         const totalSeconds=ArrayToSeconds(timeArr);
         console.log(totalSeconds)

@@ -1,11 +1,13 @@
 import TaskType from './Task.type';
 import {takeEvery,put,select} from 'redux-saga/effects';
+//import {startBreak} from '../breakButton/BreakButton.action'
 //import {startTask} from '../task/Task.action';
 import {setCountDownTrue,pauseCountDown} from '../totalTime/TotalTime.action'
 
 function* startTaskEffects({type,taskName,seconds}){
 
     yield put(setCountDownTrue());
+    //yield put(startBreak('releaseAll'))
 }
 
 function* pauseTaskEffects({type,taskName}){
@@ -24,6 +26,7 @@ function* completeTaskEffects({type,taskName}){
 
 export function* startTask(){
     yield takeEvery(TaskType.START_TASK, startTaskEffects)
+    
 }
 export function* pauseTask(){
     yield takeEvery(TaskType.PAUSE_TASK, pauseTaskEffects)

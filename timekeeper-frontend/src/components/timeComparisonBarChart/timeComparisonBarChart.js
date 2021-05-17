@@ -4,25 +4,26 @@ import {Bar} from 'react-chartjs-2';
 import './timeComparisonBarChart.style.scss'
 const TimeComparisonBarChart=()=>{
     const {key,data}=useSelector(state=>state.SubmitDataReducer);
-    const TotalTimeReducer=useSelector(state=>state.TotalTimeReducer);
+    //onst TotalTimeReducer=useSelector(state=>state.TotalTimeReducer);
     let chartLabels=[];
     let taskHour=[];
     let bgColors=[]
     let borderColors=[]
-    console.log(data[key]);
-    console.log(Object.keys(data[key]).length)
+    //console.log(data[key]);
+    //console.log(Object.keys(data[key]).length)
     if(Object.keys(data).length>0){
     let obj=data[key].taskData;
     console.log(obj)
     for(var k in obj){
         chartLabels.push(k.toUpperCase());
         
-        taskHour.push(((obj[k].time)/3600).toFixed(2))
+        taskHour.push(((obj[k].time)/3600).toFixed(4))
         bgColors.push(obj[k].color)
         borderColors.push('rgb(0,0,0)')
         }
     }
    chartLabels.push('Estimated Total Time');
+   let TotalTimeReducer=data[key].totalTimeData
    let originalTimeKey=Object.keys(TotalTimeReducer.originalTime[TotalTimeReducer.key])[0];
    taskHour.push((TotalTimeReducer.originalTime[TotalTimeReducer.key][originalTimeKey]/3600).toFixed(2));
    bgColors.push('rgb(28,16,133)');
@@ -53,7 +54,7 @@ const TimeComparisonBarChart=()=>{
       };
     return(
         <div className='timeConparisonBarChartContainer'>
-            {Object.keys(data[key]).length>0?
+            {Object.keys(data).length>0 && Object.keys(data[key]).length>0?
             <Bar data={Doughnutdata}/>
             :''}
         </div>

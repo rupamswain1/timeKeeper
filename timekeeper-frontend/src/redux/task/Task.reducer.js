@@ -124,6 +124,16 @@ export const TaskReducer=(state=INITIAL_STATUS,action)=>{
                     taskList:{},
                     activeTask:null
                 }
+            case TaskType.COMPLETE_ALL_TASK:
+                for(var key in state.taskList){
+                    state.taskList[key].isCompleted=true;
+                }
+                console.log(state.taskList[key])
+                return{
+                    ...state,
+                    activeTask:null,
+                    taskList:{...state.taskList}
+                }
         default:
             return state;
     }

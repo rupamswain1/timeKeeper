@@ -50,3 +50,9 @@ export const removeAllTask=()=>{
         type:TaskType.REMOVE_ALL_TASK,
     }
 }
+
+export const completeAll=()=>{
+    return{
+        type:TaskType.COMPLETE_ALL_TASK,
+    }
+}

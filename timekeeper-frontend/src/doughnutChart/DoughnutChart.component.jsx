@@ -8,19 +8,21 @@ const DoughnutChart=()=>{
     let taskHour=[];
     let bgColors=[]
     let borderColors=[]
-    console.log(data[key]);
-    console.log(Object.keys(data[key]).length)
+    //console.log(data[key]);
+    //console.log(Object.keys(data[key]).length)
     if(Object.keys(data).length>0){
     let obj=data[key].taskData;
     console.log(obj)
     for(var k in obj){
         chartLabels.push(k.toUpperCase());
         
-        taskHour.push(((obj[k].time)/3600).toFixed(2))
+        taskHour.push(((obj[k].time)/3600).toFixed(4))
         bgColors.push(obj[k].color)
         borderColors.push('rgb(0,0,0)')
         }
     }
+    console.log(taskHour)
+    console.log(bgColors)
    
     const Doughnutdata = {
         labels: chartLabels,
@@ -37,7 +39,7 @@ const DoughnutChart=()=>{
       };
     return(
         <div className='doughnutChartContainer'>
-            {Object.keys(data[key]).length>0?
+            {Object.keys(data).length>0 && Object.keys(data[key]).length>0?
             <Doughnut data={Doughnutdata}/>
             :''}
         </div>

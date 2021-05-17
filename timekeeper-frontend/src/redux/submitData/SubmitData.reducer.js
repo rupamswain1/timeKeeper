@@ -8,6 +8,7 @@ const INITIAL_STATE={
 export const SubmitDataReducer=(state=INITIAL_STATE,action)=>{
     switch(action.type){
         case SubmitDataType.SUBMIT_ALL_DATA_START:
+           
             return{
                 ...state,
             }
