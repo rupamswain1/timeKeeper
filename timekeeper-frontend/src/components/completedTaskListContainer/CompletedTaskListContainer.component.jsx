@@ -5,7 +5,10 @@ import './CompletedTaskListContainer.style.scss'
 
 const CompletedTaskListContainer=()=>{
     const {taskList}=useSelector(state=>state.TaskReducer);
+    const {key,originalTime,totalTime}=useSelector(state=>state.TotalTimeReducer);
     return(
+        <>
+        {totalTime[key]?
         <div className='completedTaskListMainContainer'>
             <span className='headingCompleted'>Completed Task List</span>
             <div className='completedTaskListContainer'>
@@ -22,6 +25,8 @@ const CompletedTaskListContainer=()=>{
             }          
             </div>
         </div>
+        :''}
+        </>
     )
 }
 export default CompletedTaskListContainer;

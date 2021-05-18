@@ -1,7 +1,7 @@
 .mainContainerHomePage{
     display: flexbox;
     position: absolute;
-    background-color: rgb(240, 246, 247);
+    background-color: rgb(255, 255, 255);
     width:100%;
     height: 100%;
     // /overflow: auto;
@@ -19,7 +19,7 @@
         margin-top: 3vh;
         width:100%;
         //border-style: dashed;
-        height: 10%;
+        //height: 10%;
         margin-bottom: 4vh;
     }
     .taskListContainer{
@@ -27,15 +27,16 @@
         margin-top: 3vh;
         width:100%;
         //border-style: dashed;
-        height: 60%;
+        //height: 60%;
         
     }
     .reportButtonContainer{
         display: flex;
         width:100%;
         //border-style: dashed;
-        height: 5%;
+        //height: 5%;
         margin-bottom: 4%;
+        margin-top: 4%;
         .finishDayBtn{
             position:relative;
             width:40%;
@@ -53,8 +54,8 @@
         display: flex;
         width:100%;
         //border-style: dashed;
-        height: 60%;
-        margin-top: 5%;
+        //height: 60%;
+        margin-top: 2%;
         padding-bottom: 5%;
     }
 

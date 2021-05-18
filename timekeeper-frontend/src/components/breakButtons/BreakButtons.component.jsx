@@ -17,6 +17,9 @@ import {startBreak} from '../../redux/breakButton/BreakButton.action';
 const BreakButtons=()=>{
 
     const breakData=useSelector(state=>state.BreakButtonReducer);
+    const totalTimeReducer=useSelector(state=>state.TotalTimeReducer);
+    const totalTimeKey=totalTimeReducer.key;
+    const {totalTime,countDownProgress}=totalTimeReducer;
     const dispatch=useDispatch();
     console.log('call')
 
@@ -25,7 +28,10 @@ const BreakButtons=()=>{
         dispatch(startBreak(buttonName))
     }
     return(
+        
         <div className='breakbuttonsMainContainer'>
+        {totalTime[totalTimeKey]?
+            <>
             <Tooltip title='Instagram'>
                 <button className={`brakButton-insta-${breakData['instagram'].isActive?'active':''}`} onClick={()=>dispatchAction('instagram')}><InstagramIcon style={{fill: "white"}} fontSize="large" /></button>
             </Tooltip>
@@ -72,7 +78,7 @@ const BreakButtons=()=>{
                  <button className={`brakButton-eject-${breakData['releaseAll'].isActive?'active':''}`} onClick={()=>dispatchAction('releaseAll')}><EjectIcon style={{fill: "white"}} fontSize="large"/></button>
             </Tooltip>
             
-            
+            </>:''}
         </div>
         )
 }

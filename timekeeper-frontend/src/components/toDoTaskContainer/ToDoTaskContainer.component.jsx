@@ -13,7 +13,7 @@ import {addTask} from '../../redux/task/Task.action';
 const ToDoTaskContainer=()=>{
 
     const {taskList}=useSelector(state=>state.TaskReducer);
-    const {key,originalTime,totalTime}=useSelector(state=>state.TaskReducer);
+    const {key,originalTime,totalTime}=useSelector(state=>state.TotalTimeReducer);
     const dispatch=useDispatch();
     const[taskName,setTaskName]=useState();
     console.log(taskList)
@@ -27,6 +27,8 @@ const ToDoTaskContainer=()=>{
     }
    
     return(
+        <>
+        {totalTime[key]?
         <div className='toDoMainContainer'>
             <span className='headingToDo'>Task List</span>
             <div className='addTaskinpputContainer'>
@@ -56,6 +58,8 @@ const ToDoTaskContainer=()=>{
             </div>
 
         </div>
+        :''}
+        </>
     )
 }
 export default ToDoTaskContainer;
