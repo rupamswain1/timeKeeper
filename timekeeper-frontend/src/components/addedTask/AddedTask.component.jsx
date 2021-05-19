@@ -6,7 +6,7 @@ import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
 import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
 import CancelIcon from '@material-ui/icons/Cancel';
 import Tooltip from '@material-ui/core/Tooltip';
-const AddedTask=({completed,bgColor,taskName,paused,percentage,type})=>{
+const AddedTask=({completed,bgColor,taskName,paused,percentage,type,time})=>{
     
     const dispatch=useDispatch();
     const containerStyle={
@@ -32,10 +32,11 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type})=>{
       const labelStyle = {
         position:'absolute',
         top:'1vh',
-        left:'4.5vw',
+        left:'-3vw',
         color: 'black',
         fontWeight: 'bold',
         'z-index':-1,
+        width:'10vw',
         
       }
 
@@ -52,7 +53,8 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type})=>{
         position:'absolute',
         top:'0.5vh',
         display:'flex',
-        'padding-left':'8.5vw',
+        left:'1vw',
+        'padding-left':'7.5vw',
         textAlign: 'right'
       }
       const taskNameStyle={
@@ -73,7 +75,7 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type})=>{
                
             </div>
             <div className='taskContent' style={taskContentStyle}>
-                <span style={labelStyle}>{`${percentage}%`}</span>
+                <span style={labelStyle}>{`${time[0]+''+time[1]+':'+time[2]+''+time[3]+':'+time[4]+''+time[5]}  -  ${percentage}%`}</span>
                 <div className='taskName' style={taskNameStyle}>
                     {`${taskName.toUpperCase().slice(0,14)}${taskName.length>14?'...':''}`}
                 </div>

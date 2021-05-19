@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import './ToDoTaskContainer.style.scss'
 import Tooltip from '@material-ui/core/Tooltip';
@@ -8,8 +8,9 @@ import CheckIcon from '@material-ui/icons/Check';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import AddedTask from '../addedTask/AddedTask.component';
-import {addTask} from '../../redux/task/Task.action';
-
+import GetDate from '../../logic/getDate'
+import {addTask,removeAllTask} from '../../redux/task/Task.action';
+import {SecondsToArray} from '../../logic/arrayToSeconds'
 const ToDoTaskContainer=()=>{
 
     const {taskList}=useSelector(state=>state.TaskReducer);
@@ -25,7 +26,7 @@ const ToDoTaskContainer=()=>{
         setTaskName('');
         document.getElementById('outlined-basic').blur();
     }
-   
+  
     return(
         <>
         {totalTime[key]?
@@ -50,7 +51,7 @@ const ToDoTaskContainer=()=>{
                 {Object.keys(taskList).map((key)=>
                     {   return(
                         taskList[key].isCompleted?'':
-                        (<AddedTask key={key} type={taskList[key].type} completed={taskList[key].isCompleted} bgColor={taskList[key].color} taskName={key} paused={taskList[key].paused} percentage={taskList[key].percentage}/>)
+                        (<AddedTask key={key} type={taskList[key].type} completed={taskList[key].isCompleted} bgColor={taskList[key].color} taskName={key} paused={taskList[key].paused} percentage={taskList[key].percentage} time={SecondsToArray(taskList[key].time)}/>)
                         )
                     }    
                     )

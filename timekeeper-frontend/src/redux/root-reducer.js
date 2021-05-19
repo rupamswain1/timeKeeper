@@ -10,6 +10,7 @@ const persistConfig={
     key:'root',
     storage,
     whiteList:['TotalTimeReducer','SubmitDataReducer'],
+    
 }
 
 export const rootReducer=combineReducers({
