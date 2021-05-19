@@ -17,7 +17,7 @@ const Header=()=>{
            
             <div className='optionContainer'>
                     <div className='option'>
-                        SignIn
+                        
                     </div>
                 
                               
