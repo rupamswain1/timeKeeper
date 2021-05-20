@@ -54,8 +54,13 @@ const HomePage=()=>{
             
             
             <div className='graphsContainer'>
-                <DoughnutChart/>
-                <TimeComparisonBarChart/>
+                <div className='chartConatiner1'> 
+                    <DoughnutChart/>1
+                    <TimeComparisonBarChart/>
+                </div>
+                <div className='chartContainer2'>
+                    <TimeTrackerLineChart/>
+                </div>
                 
             </div>
             

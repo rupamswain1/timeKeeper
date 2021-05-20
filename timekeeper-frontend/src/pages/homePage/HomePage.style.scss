@@ -51,12 +51,22 @@
         }
     }
     .graphsContainer{
-        display: flex;
+        display: block;
         width:100%;
         //border-style: dashed;
         //height: 60%;
         margin-top: 2%;
         padding-bottom: 5%;
+        .chartConatiner1{
+            display: flex;
+            position: relative;
+        }
+        .chartContainer2{
+            display: flex;
+            position: absolute;
+            //height: 100%;
+            width: 100%;
+        }
     }
 
 }

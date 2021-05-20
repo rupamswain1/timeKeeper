@@ -1,0 +1,23 @@
+.timeConparisonBarLineContainer-{
+    //height:100%;
+    //border-style: dashed;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 50%;
+    left:24%;
+    position: relative;
+    box-shadow: -2px 16px 15px rgb(73, 72, 72); 
+    .lineChart{
+        //height:50%;
+        
+    }
+}
+div[class*='hideBarChartContainer']{
+    display: none;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 50%;
+    left:24%;
+    position: relative;
+    box-shadow: -2px 16px 15px rgb(73, 72, 72); 
+}
