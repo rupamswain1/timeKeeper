@@ -28,7 +28,7 @@ const TimeComparisonBarChart=()=>{
     chartLabels.push('Estimated Total Time');
     let TotalTimeReducer=data[key].totalTimeData
     let originalTimeKey=Object.keys(TotalTimeReducer.originalTime[TotalTimeReducer.key])[0];
-    taskHour.push((TotalTimeReducer.originalTime[TotalTimeReducer.key][originalTimeKey]/3600).toFixed(2));
+    taskHour.push((TotalTimeReducer.originalTime[TotalTimeReducer.key][originalTimeKey]/3600).toFixed(3));
     bgColors.push('rgb(28,16,133)');
     borderColors.push('rgb(0,0,0)');
     let actualTime=0;
@@ -39,7 +39,7 @@ const TimeComparisonBarChart=()=>{
         actualTime=TotalTimeReducer.totalTime[TotalTimeReducer.key][originalTimeKey];
     }
     chartLabels.push('Actual Total Time');
-    taskHour.push((actualTime/3600).toFixed(2));
+    taskHour.push((actualTime/3600).toFixed(3));
     bgColors.push('rgb(222, 11, 39)');
     borderColors.push('rgb(0,0,0)');
       Doughnutdata = {
