@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {submitDataStart} from '../../redux/submitData/SubmitData.action'
 import './FinishDayButton.style.scss'
 const FinishDayButton=()=>{
-    const {key,originalTime,totalTime}=useSelector(state=>state.TotalTimeReducer);
+    const {key,totalTime}=useSelector(state=>state.TotalTimeReducer);
     const dispatch=useDispatch();
     const dispatchSubmit=()=>{
 

@@ -6,3 +6,8 @@ export const GetDate=()=>{
     let fullDate=date.toString()+month.toString()+year.toString();
     return fullDate;
 }
+
+export const GetTimeInSeconds=()=>{
+    let seconds=Math.floor(new Date().getTime()/1000);
+    return seconds;
+}

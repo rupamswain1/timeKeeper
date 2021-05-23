@@ -19,7 +19,7 @@ const BreakButtons=()=>{
     const breakData=useSelector(state=>state.BreakButtonReducer);
     const totalTimeReducer=useSelector(state=>state.TotalTimeReducer);
     const totalTimeKey=totalTimeReducer.key;
-    const {totalTime,countDownProgress}=totalTimeReducer;
+    const {totalTime}=totalTimeReducer;
     const dispatch=useDispatch();
     console.log('call')
 

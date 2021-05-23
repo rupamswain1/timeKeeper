@@ -1,14 +1,13 @@
 import React,{useState,useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 import CheckIcon from '@material-ui/icons/Check';
 import {saveTotalTime,updateCountDown} from '../../redux/totalTime/TotalTime.action';
 import {ArrayToSeconds,SecondsToArray} from '../../logic/arrayToSeconds';
 import './TotalTargetTime.scss' 
 const TotalTargetTime=()=>{
     const dispatch=useDispatch();
-    const {key,totalTime,countDownProgress}=useSelector(state=>state.TotalTimeReducer);
+    const {key,totalTime}=useSelector(state=>state.TotalTimeReducer);
     const {taskList}=useSelector(state=>state.TaskReducer);
     const [timeState,setTimeState]=useState([]);
     console.log(timeState)
@@ -30,7 +29,7 @@ const TotalTargetTime=()=>{
       }, [timeState.length]);
     //console.log(timeArr)
     const validatePrevValue=()=>{
-        if((totalTime[key]!=undefined)&&(totalTime[key][getFullDate()]!=undefined)){
+        if((totalTime[key]!==undefined)&&(totalTime[key][getFullDate()]!==undefined)){
             timeArr=SecondsToArray(totalTime[key][getFullDate()]);
             setTimeState(timeArr)
         }
@@ -44,7 +43,7 @@ const TotalTargetTime=()=>{
                 document.getElementById(parseInt(event.target.name)+1).disabled=false;
                 document.getElementById(parseInt(event.target.name)+1).focus();
                 document.getElementById(parseInt(event.target.name)+1).value='';
-                if(parseInt(event.target.name)!=0){
+                if(parseInt(event.target.name)!==0){
                 document.getElementById(parseInt(event.target.name)).disabled=true;
                 }
             }
@@ -58,7 +57,6 @@ const TotalTargetTime=()=>{
     const clearTxt=event=>{
         document.getElementById(parseInt(event.target.name)).value='';
     }
-    let newTime=undefined
     const getFullDate=()=>{
         let newDate=new Date()
             let date = newDate.getDate();

@@ -1,20 +1,15 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import './ToDoTaskContainer.style.scss'
-import Tooltip from '@material-ui/core/Tooltip';
-import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button';
 import CheckIcon from '@material-ui/icons/Check';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
 import AddedTask from '../addedTask/AddedTask.component';
-import GetDate from '../../logic/getDate'
-import {addTask,removeAllTask} from '../../redux/task/Task.action';
+import {addTask} from '../../redux/task/Task.action';
 import {SecondsToArray} from '../../logic/arrayToSeconds'
 const ToDoTaskContainer=()=>{
 
     const {taskList}=useSelector(state=>state.TaskReducer);
-    const {key,originalTime,totalTime}=useSelector(state=>state.TotalTimeReducer);
+    const {key,totalTime}=useSelector(state=>state.TotalTimeReducer);
     const dispatch=useDispatch();
     const[taskName,setTaskName]=useState();
     console.log(taskList)

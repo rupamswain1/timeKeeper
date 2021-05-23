@@ -24,7 +24,7 @@ export const BreakButtonReducer=(state=INITIAL_STATE,action)=>{
             let prevActive='';
             let btnName=action.breakName;
             console.log(btnName)
-            if(action.breakName!='releaseAll'){
+            if(action.breakName!=='releaseAll'){
                 
                 state[state.currentActive].isActive=false;
                 state[action.breakName].isActive=true;

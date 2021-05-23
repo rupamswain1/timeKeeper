@@ -1,5 +1,5 @@
 import React from 'react';
-import {useSelector,useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {removeTask,pauseTask,startTask,completeTask} from '../../redux/task/Task.action'
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import PauseCircleOutlineIcon from '@material-ui/icons/PauseCircleOutline';
@@ -23,7 +23,6 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type,time})=>{
         height: '100%',
         width: `${percentage}%`,
         backgroundColor: `${bgColor}`,
-        borderRadius: 'inherit',
         textAlign: 'right',
         borderRadius: 50,
         transition: 'width 1s ease-in-out',

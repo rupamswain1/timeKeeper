@@ -38,3 +38,10 @@ export const removeAllTime=()=>{
         type:TotalTimeType.REMOVE_ALL_TIME,
     }
 }
+
+export const updateLastRunSec=(seconds)=>{
+    return{
+        type:TotalTimeType.UPDATE_LAST_RUN_TIME,
+        seconds:seconds,
+    }
+}

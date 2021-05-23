@@ -2,7 +2,7 @@ import SubmitDataType from './SubmitData.type';
 import {takeEvery,put,select} from 'redux-saga/effects';
 import {startBreak} from '../breakButton/BreakButton.action'
 import {submitDataInProgerss} from '../submitData/SubmitData.action'
-import {removeAllTask,completeAll,pauseTask} from '../task/Task.action';
+import {removeAllTask,completeAll} from '../task/Task.action';
 import {removeAllTime} from '../totalTime/TotalTime.action';
 function* startSubmitProcess(){
 

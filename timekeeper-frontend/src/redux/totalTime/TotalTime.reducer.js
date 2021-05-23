@@ -5,6 +5,7 @@ const INITIAL_STATE={
     totalTime:{},
     originalTime:{},
     countDownProgress:false,
+    lastUpdatedTime:null,
 }
 
 export const TotalTimeReducer=(state=INITIAL_STATE, action)=>{
@@ -30,11 +31,17 @@ export const TotalTimeReducer=(state=INITIAL_STATE, action)=>{
                 totalTime:{...state.totalTime},
                 countDownProgress:true,
             }
+        case TotalTimeType.UPDATE_LAST_RUN_TIME:
+            return{
+                ...state,
+                lastUpdatedTime:action.seconds,
+            }
         case TotalTimeType.PAUSE_COUNTDOWN:
             state.countDownProgress=false;
             return{
                 ...state,
                 countDownProgress:false,
+                lastUpdatedTime:null,
             }
         case TotalTimeType.SET_COUNTDOWN_TRUE:
             return{
@@ -49,6 +56,7 @@ export const TotalTimeReducer=(state=INITIAL_STATE, action)=>{
                 totalTime:{},
                 originalTime:{},
                 countDownProgress:false,
+                lastUpdatedTime:null,
             }
         default:
             return state;

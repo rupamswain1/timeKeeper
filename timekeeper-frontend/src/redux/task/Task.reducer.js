@@ -1,4 +1,3 @@
-import { pauseTask } from './Task.action';
 import TaskType from './Task.type';
 
 const INITIAL_STATUS={
@@ -10,13 +9,14 @@ const INITIAL_STATUS={
 export const TaskReducer=(state=INITIAL_STATUS,action)=>{
     switch(action.type){
         case TaskType.ADD_TASK:
-            if(state.taskList[action.taskName]==undefined){
+            if(state.taskList[action.taskName]===undefined){
                 let taskData={
                     time:0,
                     paused:true,
                     isCompleted:false,
                     color:'rgb(239, 68, 11)',
                     percentage:0,
+                    
                 }
                 state.taskList[action.taskName]=taskData;
             }
@@ -48,12 +48,13 @@ export const TaskReducer=(state=INITIAL_STATUS,action)=>{
                 state.taskList[key].paused=true;
             }
             state.taskList[action.taskName].paused=false;
-            if(action.seconds!=undefined && action.totalTime!=undefined){
-            state.taskList[action.taskName].time=parseInt(state.taskList[action.taskName].time)+parseInt(action.seconds);
-            console.log(action.totalTime);
-            console.log(state.taskList[action.taskName].time)
-            
-            state.taskList[action.taskName].percentage=(((state.taskList[action.taskName].time)/(parseInt(action.totalTime)))*parseInt(100)).toFixed(1);
+            if(action.seconds!==undefined && action.totalTime!==undefined){
+
+                state.taskList[action.taskName].time=parseInt(state.taskList[action.taskName].time)+parseInt(action.seconds);
+                console.log(action.totalTime);
+                console.log(state.taskList[action.taskName].time)
+                
+                state.taskList[action.taskName].percentage=(((state.taskList[action.taskName].time)/(parseInt(action.totalTime)))*parseInt(100)).toFixed(1);
             }
             state.activeTask=action.taskName;
             return{
@@ -72,14 +73,14 @@ export const TaskReducer=(state=INITIAL_STATUS,action)=>{
                 activeTask:state.activeTask,
             }
         case TaskType.ADD_BREAK_TASK:
-            for(var key in state.taskList){
+            for(var k in state.taskList){
                 //console.log(key)
-                if(key!=action.taskName){
-                    state.taskList[key].paused=true;
+                if(k!==action.taskName){
+                    state.taskList[k].paused=true;
                 }
                 //console.log(state.taskList[key].pasued)
             }
-            if(action.taskName!='releaseAll'){
+            if(action.taskName!=='releaseAll'){
                 
                 //console.log(state.taskList)
                 if((state.taskList[action.taskName]===undefined)){
@@ -125,10 +126,10 @@ export const TaskReducer=(state=INITIAL_STATUS,action)=>{
                     activeTask:null
                 }
             case TaskType.COMPLETE_ALL_TASK:
-                for(var key in state.taskList){
-                    state.taskList[key].isCompleted=true;
+                for(var k1 in state.taskList){
+                    state.taskList[k1].isCompleted=true;
                 }
-                console.log(state.taskList[key])
+                //console.log(state.taskList[k1])
                 return{
                     ...state,
                     activeTask:null,

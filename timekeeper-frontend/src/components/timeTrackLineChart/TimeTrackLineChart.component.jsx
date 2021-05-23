@@ -7,14 +7,8 @@ const TimeTrackerLineChart=()=>{
     const {key,data}=useSelector(state=>state.SubmitDataReducer);
     let dataLine=null;
     //onst TotalTimeReducer=useSelector(state=>state.TotalTimeReducer);
-    let chartData={}
     let display=false;
-    if(Object.keys(data).length>0 && Object.keys(data[key]).length>0) {
-      let chartLabels=[];
-      let taskHour=[];
-      let bgColors=[]
-      let borderColors=[]
-      
+    if(Object.keys(data).length>0 && Object.keys(data[key]).length>0) {      
       let xAxis=[];
       //console.log(data[key]);
       //console.log(Object.keys(data[key]).length)

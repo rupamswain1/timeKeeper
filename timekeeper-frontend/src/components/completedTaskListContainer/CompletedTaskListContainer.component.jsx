@@ -6,10 +6,10 @@ import {GetDate} from '../../logic/getDate';
 import {SecondsToArray} from '../../logic/arrayToSeconds'
 const CompletedTaskListContainer=()=>{
     const {taskList}=useSelector(state=>state.TaskReducer);
-    const {key,originalTime,totalTime}=useSelector(state=>state.TotalTimeReducer);
+    const {key,totalTime}=useSelector(state=>state.TotalTimeReducer);
     return(
         <>
-        {totalTime[key]!=undefined && totalTime[key][GetDate()]?
+        {totalTime[key]!==undefined && totalTime[key][GetDate()]?
         <div className='completedTaskListMainContainer'>
             <span className='headingCompleted'>Completed Task List</span>
             <div className='completedTaskListContainer'>

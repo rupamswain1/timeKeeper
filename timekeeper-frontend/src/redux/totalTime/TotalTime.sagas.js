@@ -1,15 +1,15 @@
 import TotalTimeType from './TotalTime.type';
 import {takeEvery,put,select} from 'redux-saga/effects';
-import {startTask,removeAllTask} from '../task/Task.action';
-import {startCountDown} from '../totalTime/TotalTime.action';
-import {GetDate} from '../../logic/getDate';
+import {startTask} from '../task/Task.action';
+import {startCountDown,updateLastRunSec} from '../totalTime/TotalTime.action';
+import {GetDate,GetTimeInSeconds} from '../../logic/getDate';
 import {submitDataStart} from '../submitData/SubmitData.action'
 function* updateCountDown(){
     var d = new Date(); // for now
     var hr=d.getHours(); // => 9
     var min=d.getMinutes(); // =>  30
     var sec=d.getSeconds(); 
-    const {key,countDownProgress,totalTime,originalTime}=yield select(state=>state.TotalTimeReducer)
+    const {key,countDownProgress,originalTime,lastUpdatedTime}=yield select(state=>state.TotalTimeReducer)
     const taskReducer=yield select(state=>state.TaskReducer)
    
     if(parseInt(hr)===23 && parseInt(min)===59 && parseInt(sec)===58){
@@ -23,13 +23,19 @@ function* updateCountDown(){
     }
     else{
     let originalTimeLocal=originalTime[key][GetDate()];
-    
-    //check for count down is in progress or not,
-    //check task paused status
-    //console.log('saaaaaaaaa')
+    let seconds=GetTimeInSeconds();
     if(countDownProgress){
-        yield put(startCountDown(1))
-        yield put(startTask(taskReducer.activeTask,1,originalTimeLocal))
+        if(lastUpdatedTime===null){
+            yield put(updateLastRunSec(seconds))
+            yield put(startCountDown(1))
+            yield put(startTask(taskReducer.activeTask,1,originalTimeLocal))
+        }
+        else{
+            let timeDiff=seconds-lastUpdatedTime;
+            yield put(updateLastRunSec(seconds))
+            yield put(startCountDown(timeDiff))
+            yield put(startTask(taskReducer.activeTask,timeDiff,originalTimeLocal))
+        }
     }
     }
 }

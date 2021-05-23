@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import {useDispatch,useSelector} from 'react-redux';
+import React from 'react'
+import {useDispatch} from 'react-redux';
 import TotalTargetTime from '../../components/totalTargetTime/TotalTargetTime.component';
 import BreakButtons from '../../components/breakButtons/BreakButtons.component';
 import ToDoTaskContainer from '../../components/toDoTaskContainer/ToDoTaskContainer.component'
@@ -17,10 +17,6 @@ import {removeAllTime} from '../../redux/totalTime/TotalTime.action';
 import './HomePage.style.scss'
 const HomePage=()=>{
     const dispatch=useDispatch();
-    //const {key,data}=useSelector(state=>state.SubmitDataReducer);
-    //const totalTimeReducer=useSelector(state=>state.TotalTimeReducer);
-    //const totalTimeKey=totalTimeReducer.key;
-    //const {totalTime,countDownProgress}=totalTimeReducer;
     const reset=()=>{
         dispatch(removeAllTask());
         dispatch(removeAllTime());
