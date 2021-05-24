@@ -16,6 +16,11 @@ export const SubmitDataReducer=(state=INITIAL_STATE,action)=>{
             state.key=Object.keys(state.data).length;
             let date=GetDate();
             let taskData=action.taskReducer;
+            for(var key in taskData){
+               if(taskData[key].type==='remainder'){
+                   delete taskData[key];
+               }
+            }
             let breakButtonData=action.breakButtonReducer;
             let totalTimeData=action.totalTimeReducer;
             

@@ -56,3 +56,22 @@ export const completeAll=()=>{
         type:TaskType.COMPLETE_ALL_TASK,
     }
 }
+
+
+export const addRemainder=(remainderName,timeInSec,repeat)=>{
+    return{
+        type:TaskType.ADD_REMAINDER,
+        remainderName:remainderName,
+        time:timeInSec,
+        repeat:repeat,
+    }
+}
+
+
+export const startRemainder=(seconds)=>{
+    return{
+        type:TaskType.START_REMAINDER,
+        seconds:seconds,
+    }
+}
+

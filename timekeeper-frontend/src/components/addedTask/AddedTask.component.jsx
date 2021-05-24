@@ -14,7 +14,7 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type,time})=>{
         height:'15%',
         width:'100%',
         backgroundColor: "#e0e0de",
-        borderRadius: 5,
+        borderRadius: 50,
         'margin-top':5,
         display:'flex',
     }
@@ -24,7 +24,7 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type,time})=>{
         width: `${percentage}%`,
         backgroundColor: `${bgColor}`,
         textAlign: 'right',
-        borderRadius: 50,
+        borderRadius: '50px',
         transition: 'width 1s ease-in-out',
       }
 
@@ -78,38 +78,44 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type,time})=>{
                 <div className='taskName' style={taskNameStyle}>
                     {`${taskName.toUpperCase().slice(0,14)}${taskName.length>14?'...':''}`}
                 </div>
-                {completed?'':
+                {completed && type!=='remainder'?'':
             
                 
                 <div className='iconsList' style={iconsListStyle}>
                     {paused
                         ?
-                            <Tooltip title={`Start ${taskName.toUpperCase()}`}  arrow>
-                                <div className='playButton'>
-                                    <PlayCircleOutlineIcon key={`${taskName}-playBtn`} onClick={()=>dispatch(startTask(taskName))}/>
-                                </div>
-                            </Tooltip>
-                        :
-                            <Tooltip title={`Pause ${taskName.toUpperCase()}`}  arrow>
-                                <div className='playButton'>
-                                    <PauseCircleOutlineIcon key={`${taskName}-pauseBtn`} onClick={()=>dispatch(pauseTask(taskName))}/>
-                                </div>
-                            </Tooltip>
+                            type!=='remainder'
+                            ?
+                                <Tooltip title={`Start ${taskName.toUpperCase()}`}  arrow>
+                                    <div className='playButton'>
+                                        <PlayCircleOutlineIcon key={`${taskName}-playBtn`} onClick={()=>dispatch(startTask(taskName))}/>
+                                    </div>
+                                </Tooltip>
+                            :''
+                            :type!=='remainder'
+                            ?
+                                <Tooltip title={`Pause ${taskName.toUpperCase()}`}  arrow>
+                                    <div className='playButton'>
+                                        <PauseCircleOutlineIcon key={`${taskName}-pauseBtn`} onClick={()=>dispatch(pauseTask(taskName))}/>
+                                    </div>
+                                </Tooltip>
+                            :''
                     }
                     
-                    {type?'':
+                    {type!=='task'?'':
                         <Tooltip title={`Mark Complete ${taskName.toUpperCase()}`}  arrow>
                             <div className='completedButton'>
                                 <DoneOutlineIcon onClick={()=>dispatch(completeTask(taskName))}/>
                             </div>
                         </Tooltip>
                     }
-                    {type?'':percentage>0?'':
+                    {type==='break'?'':percentage>0 && type!=='remainder'?'':
                         <Tooltip title={`Remove ${taskName.toUpperCase()}`}  arrow>
                             <div className='removeButton'>
                                 <CancelIcon key={`${taskName}-cancelBtn`} onClick={()=>dispatch(removeTask(taskName))}/>
                             </div>
                         </Tooltip>
+                        
                     }
                     
                      

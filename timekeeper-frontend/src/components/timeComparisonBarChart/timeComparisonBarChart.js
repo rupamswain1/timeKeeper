@@ -20,7 +20,7 @@ const TimeComparisonBarChart=()=>{
       for(var k in obj){
           chartLabels.push(k.toUpperCase());
           
-          taskHour.push(((obj[k].time)/3600).toFixed(4))
+          taskHour.push(((obj[k].time)/3600).toFixed(3))
           bgColors.push(obj[k].color)
           borderColors.push('rgb(0,0,0)')
           }

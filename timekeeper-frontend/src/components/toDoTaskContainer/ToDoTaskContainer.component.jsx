@@ -6,6 +6,7 @@ import CheckIcon from '@material-ui/icons/Check';
 import AddedTask from '../addedTask/AddedTask.component';
 import {addTask} from '../../redux/task/Task.action';
 import {SecondsToArray} from '../../logic/arrayToSeconds'
+import {GetDate} from '../../logic/getDate';
 const ToDoTaskContainer=()=>{
 
     const {taskList}=useSelector(state=>state.TaskReducer);
@@ -24,7 +25,7 @@ const ToDoTaskContainer=()=>{
   
     return(
         <>
-        {totalTime[key]?
+        {totalTime[key]!==undefined && totalTime[key][GetDate()]?
         <div className='toDoMainContainer'>
             <span className='headingToDo'>Task List</span>
             <div className='addTaskinpputContainer'>
@@ -45,7 +46,7 @@ const ToDoTaskContainer=()=>{
 
                 {Object.keys(taskList).map((key)=>
                     {   return(
-                        taskList[key].isCompleted?'':
+                        taskList[key].isCompleted?'':taskList[key].type==='remainder'?'':
                         (<AddedTask key={key} type={taskList[key].type} completed={taskList[key].isCompleted} bgColor={taskList[key].color} taskName={key} paused={taskList[key].paused} percentage={taskList[key].percentage} time={SecondsToArray(taskList[key].time)}/>)
                         )
                     }    

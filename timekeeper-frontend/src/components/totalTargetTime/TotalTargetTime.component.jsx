@@ -102,7 +102,7 @@ const TotalTargetTime=()=>{
             <input disabled className={cls} placeholder='S' type='text' name='5' onFocus={clearTxt} id='5' onfocus='this.value=""' value={displayCondition?timeState[5]:timeArr[5]} maxlength='1' onChange={handleChange}>
             </input>
                 <div className='timerText'>S</div>
-            {Object.keys(taskList).length>0?'':
+            {totalTime[key]?'':
             <Button
             variant="contained"
             color="primary"

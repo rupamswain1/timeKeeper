@@ -4,6 +4,7 @@ import TotalTargetTime from '../../components/totalTargetTime/TotalTargetTime.co
 import BreakButtons from '../../components/breakButtons/BreakButtons.component';
 import ToDoTaskContainer from '../../components/toDoTaskContainer/ToDoTaskContainer.component'
 import CompletedTaskListContainer from '../../components/completedTaskListContainer/CompletedTaskListContainer.component';
+import RemainderContainer from '../../components/remainderContainer/RemainderContainer.component'
 import FinishDayButton from '../../components/finishDayButton/FinishDayButton.component'
 
 import DoughnutChart from '../../doughnutChart/DoughnutChart.component'
@@ -20,7 +21,10 @@ const HomePage=()=>{
     const reset=()=>{
         dispatch(removeAllTask());
         dispatch(removeAllTime());
-        window.location.reload(false);
+        setTimeout(function(){
+            window.location.reload(false);
+    
+        }, 500);
     }
     return(
         <div className='mainContainerHomePage'>
@@ -39,7 +43,8 @@ const HomePage=()=>{
                 </div>
                 <div className='taskListContainer'>
                 
-                    <ToDoTaskContainer className='toDoListMain'/>
+                    <ToDoTaskContainer className='toDoListMain'/> 
+                    <RemainderContainer clasName='remainderMain'/>
                     <CompletedTaskListContainer className='completedTaskListMain'/>
                 </div>
             
@@ -50,6 +55,7 @@ const HomePage=()=>{
             
             
             <div className='graphsContainer'>
+               
                 <div className='chartConatiner1'> 
                     <DoughnutChart/>1
                     <TimeComparisonBarChart/>
