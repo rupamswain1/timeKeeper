@@ -44,7 +44,7 @@ const TimeTrackerLineChart=()=>{
                  actualTime=(-1*data[k].totalTimeData.totalTime[keyLocal][totalTimeKey])+data[k].totalTimeData.originalTime[keyLocal][totalTimeKey]
              }
               else{
-              actualTime=data[k].totalTimeData.totalTime[keyLocal][totalTimeKey]
+              actualTime=data[k].totalTimeData.originalTime[keyLocal][totalTimeKey]-data[k].totalTimeData.totalTime[keyLocal][totalTimeKey]
               }
              TotalTimeData.data.push((actualTime/3600).toFixed(3))
            }

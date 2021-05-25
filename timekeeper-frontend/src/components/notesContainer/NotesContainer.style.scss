@@ -1,0 +1,41 @@
+.notesContanerMain{
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    width:410%;
+    right: 65%;
+    height: 400%;
+    background-color: rgba(220,35,44,0.5);
+    z-index: 2;
+    .notesInput{
+        position: relative;
+        top: 5%;
+        align-items: center;
+        .noteInputs{
+            position: relative;
+            width: 60%;
+            left:10%;
+            background-color: rgba(38, 122, 218);
+            border-top-left-radius: 5px;
+            border-bottom-left-radius:5px;
+        }
+        ::placeholder{
+            color: white;
+        }
+        .addNoteBtn{
+            position: relative;
+            width: 20%;
+            left:10%;
+            background-color:  rgb(9, 79, 158);
+            color: white;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+    .notesCollection{
+        position: relative;
+        width:98%;
+    }
+}

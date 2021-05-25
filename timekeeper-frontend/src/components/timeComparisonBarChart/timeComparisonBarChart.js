@@ -36,7 +36,7 @@ const TimeComparisonBarChart=()=>{
           actualTime=(-1*TotalTimeReducer.totalTime[TotalTimeReducer.key][originalTimeKey])+TotalTimeReducer.originalTime[TotalTimeReducer.key][originalTimeKey]
     }
     else{
-        actualTime=TotalTimeReducer.totalTime[TotalTimeReducer.key][originalTimeKey];
+        actualTime=TotalTimeReducer.originalTime[TotalTimeReducer.key][originalTimeKey]-TotalTimeReducer.totalTime[TotalTimeReducer.key][originalTimeKey];
     }
     chartLabels.push('Actual Total Time');
     taskHour.push((actualTime/3600).toFixed(3));

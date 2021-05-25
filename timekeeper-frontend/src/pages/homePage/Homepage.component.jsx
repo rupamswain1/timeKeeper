@@ -6,13 +6,15 @@ import ToDoTaskContainer from '../../components/toDoTaskContainer/ToDoTaskContai
 import CompletedTaskListContainer from '../../components/completedTaskListContainer/CompletedTaskListContainer.component';
 import RemainderContainer from '../../components/remainderContainer/RemainderContainer.component'
 import FinishDayButton from '../../components/finishDayButton/FinishDayButton.component'
+import NotesContainer from '../../components/notesContainer/NotesContainer.component'
 
 import DoughnutChart from '../../doughnutChart/DoughnutChart.component'
 import TimeComparisonBarChart from '../../components/timeComparisonBarChart/timeComparisonBarChart';
 import TimeTrackerLineChart from '../../components/timeTrackLineChart/TimeTrackLineChart.component'
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import IconButton from '@material-ui/core/IconButton';
-
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 import {removeAllTask} from '../../redux/task/Task.action';
 import {removeAllTime} from '../../redux/totalTime/TotalTime.action';
 import './HomePage.style.scss'
@@ -32,6 +34,12 @@ const HomePage=()=>{
             <div className='restoreReducer'>
                 <IconButton aria-label="reset"  color="primary" onClick={reset}><RotateLeftIcon/></IconButton>    
             
+            </div>
+            <div className='openNotes'>
+                <Fab color="primary" aria-label="add">
+                     <AddIcon />
+                </Fab>
+                <NotesContainer className='notesContainerMainHome'/>
             </div>
             <div className='totalTimeContainer'>
                 <TotalTargetTime/>
