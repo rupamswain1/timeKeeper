@@ -21,7 +21,7 @@ const DoughnutChart=()=>{
           
           taskHour.push(((obj[k].time)/3600).toFixed(4))
           bgColors.push(obj[k].color)
-          borderColors.push('rgb(0,0,0)')
+          borderColors.push('rgb(255,255,255)')
           }
       }
       console.log(taskHour)
@@ -35,7 +35,7 @@ const DoughnutChart=()=>{
               data: taskHour,
               backgroundColor: bgColors,
               borderColor: borderColors,
-              borderWidth: 5,
+              borderWidth: 2,
               hoverOffset: 20
             },
           ],

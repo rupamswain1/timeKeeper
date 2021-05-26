@@ -7,7 +7,7 @@
     width:410%;
     right: 65%;
     height: 400%;
-    background-color: rgba(220,35,44,0.5);
+    background-color: rgba(220,35,44,0.8);
     z-index: 2;
     .notesInput{
         position: relative;
@@ -17,12 +17,14 @@
             position: relative;
             width: 60%;
             left:10%;
-            background-color: rgba(38, 122, 218);
+            background-color: rgb(159, 201, 250);
             border-top-left-radius: 5px;
             border-bottom-left-radius:5px;
+            outline: none;
         }
         ::placeholder{
-            color: white;
+            color: rgb(10, 8, 8);
+            font-weight: bold;
         }
         .addNoteBtn{
             position: relative;
@@ -36,6 +38,12 @@
     }
     .notesCollection{
         position: relative;
-        width:98%;
+        width:95%;
+        height: 75%;
+        border-style: solid;
+        top:8%;
+        border-width: 1px;
+        left:2%;
+        border-radius: 5px;
     }
 }

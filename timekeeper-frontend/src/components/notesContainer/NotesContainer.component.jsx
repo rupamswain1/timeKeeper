@@ -1,4 +1,5 @@
 import React from 'react';
+import Notes from '../notes/notes.component';
 import './NotesContainer.style.scss';
 
 const NotesContainer=()=>{
@@ -8,7 +9,10 @@ const NotesContainer=()=>{
                 <input type='text' placeholder='Add Note' className='noteInputs'></input>
                 <button className='addNoteBtn'>Add</button>
             </div>
-            <div className='notesCollection'>b</div>
+            <div className='notesCollection'>
+                <Notes noteMsg={'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'}/>
+                <Notes noteMsg={'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'}/>
+            </div>
         </div>
     )
 }
