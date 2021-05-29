@@ -17,6 +17,8 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import {removeAllTask} from '../../redux/task/Task.action';
 import {removeAllTime} from '../../redux/totalTime/TotalTime.action';
+import {toggleNoteDisplay} from '../../redux/notes/notes.action';
+import Header from '../../components/header/Header.component'
 import './HomePage.style.scss'
 const HomePage=()=>{
     const dispatch=useDispatch();
@@ -29,14 +31,15 @@ const HomePage=()=>{
         }, 500);
     }
     return(
-        <div className='mainContainerHomePage'>
 
+        <div className='mainContainerHomePage'>
+             <Header/>
             <div className='restoreReducer'>
                 <IconButton aria-label="reset"  color="primary" onClick={reset}><RotateLeftIcon/></IconButton>    
             
             </div>
             <div className='openNotes'>
-                <Fab color="primary" aria-label="add">
+                <Fab color="primary" aria-label="add" onClick={()=>dispatch(toggleNoteDisplay())}>
                      <AddIcon />
                 </Fab>
                 <NotesContainer className='notesContainerMainHome'/>

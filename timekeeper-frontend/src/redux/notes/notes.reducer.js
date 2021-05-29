@@ -1,6 +1,6 @@
 import NotesType from "./notes.type";
 
-INITIAL_STATE={
+const INITIAL_STATE={
     noteKey:0,
     notes:{},
     noteDisplay:false,
@@ -25,6 +25,8 @@ export const NoteReducer=(state=INITIAL_STATE,action)=>{
                 ...state,
                 notes:{...state.notes}
             }
+        default:
+            return state;
 
     }
 }

@@ -10,9 +10,9 @@
     button[class^='brakButton']{
         position: relative;
         height: 10vh;
-        border-radius: 7px;
+        border-radius: 4px;
         width: 5vw;
-        box-shadow: 0px 12px 10px #888888;
+        box-shadow: 0px 12px 10px #06308a;
         z-index: 1;
         margin-left: 0.25vw;
         transition: all 0.2s ease-in;
@@ -25,37 +25,37 @@
         box-shadow: 0px 0px 0px #888888;
     }
     button[class*='insta']{
-        background-color: rgb(243, 9, 192);
+        background-color: rgba(243, 9, 192,0.6);
     }
     button[class*='fb']{
-        background-color: rgb(10, 79, 158);
+        background-color: rgba(10, 79, 158,0.6);
     }
     button[class*='youtube']{
-        background-color: rgb(192, 9, 9);
+        background-color: rgba(192, 9, 9,0.6);
     }
     button[class*='calls']{
-        background-color: rgb(109, 75, 204);
+        background-color: rgba(109, 75, 204,0.6);
     }
     button[class*='messaging']{
-        background-color: rgb(43, 192, 43);
+        background-color: rgba(43, 192, 43,0.6);
     }
     button[class*='sleep']{
-        background-color: rgb(36, 109, 128);
+        background-color: rgba(36, 109, 128,0.6);
     }
     button[class*='excesise']{
-        background-color: rgb(13, 121, 94);
+        background-color: rgba(13, 121, 94,0.6);
     }
     button[class*='tea']{
-        background-color: rgb(102, 50, 7);
+        background-color: rgba(102, 50, 7,0.6);
     }
     button[class*='food']{
-        background-color: rgb(48, 197, 185);
+        background-color: rgba(48, 197, 185,0.6);
     }
     button[class*='eject']{
-        background-color: rgb(48, 1, 1);
+        background-color: rgba(48, 1, 1,0.6);
     }
     button[class*='misc']{
-        background-color: rgb(115, 20, 223);
+        background-color: rgba(115, 20, 223,0.6);
     }
     button[class*='active']{
         box-shadow: 0px 0px 5px #777;

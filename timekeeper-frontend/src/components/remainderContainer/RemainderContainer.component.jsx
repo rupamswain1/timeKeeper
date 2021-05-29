@@ -77,6 +77,7 @@ const RemainderContainer=()=>{
                     <div className='minutesFromNowContainer'>
                         <Checkbox
                         inputProps={{ 'aria-label': 'Checkbox Repeat' }}
+                        style={{'color':'white'}}
                         color="primary"
                         className='repeatSelectCheckBox'
                         onChange={e=>setRepeat(e.target.checked)}

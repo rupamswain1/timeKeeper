@@ -14,7 +14,7 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type,time})=>{
         height:'15%',
         width:'100%',
         backgroundColor: "#e0e0de",
-        borderRadius: 50,
+        borderRadius: '10px',
         'margin-top':5,
         display:'flex',
     }
@@ -24,7 +24,7 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type,time})=>{
         width: `${percentage}%`,
         backgroundColor: `${bgColor}`,
         textAlign: 'right',
-        borderRadius: '50px',
+        borderRadius: '5px',
         transition: 'width 1s ease-in-out',
       }
 

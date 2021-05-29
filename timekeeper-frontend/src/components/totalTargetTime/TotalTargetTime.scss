@@ -1,7 +1,7 @@
 .timcardsContainer{
     position: relative;
     display: flex;
-    left:16vw;
+    left:19vw;
     .timeBoxNegative{
         position: relative;
         //width:8vw;
@@ -13,8 +13,8 @@
         //box-shadow: 7px 5px 5px #888888;
         font-size: 600%;
         text-align: center;
-        //background-color: rgb(220, 252, 217);
-        color: black;
+        //background-color: rgba(235, 39, 39, 0.5);
+        color: rgb(190, 23, 23);
        
     }
     .timeBox{
@@ -22,28 +22,32 @@
         width:8vw;
         height: 100%;
         border-style: solid;
-        border-radius: 10px;
+        border-radius: 5px;
         border-width: 1px;
-        margin-left: 10px;
-        box-shadow: 7px 5px 5px #888888;
+        margin-left: 5px;
+        box-shadow: 7px 5px 5px #04265a;
         font-size: 600%;
         text-align: center;
-        background-color: rgb(220, 252, 217);
+      
+        background-color: rgba(36, 118, 133, 0.5);
         color: black;
        
+    }
+    ::placeholder{
+        color: white;
     }
     input[class*='-negative']{
         position: relative;
         width:8vw;
         height: 100%;
         border-style: solid;
-        border-radius: 10px;
+        border-radius: 5px;
         border-width: 1px;
         margin-left: 10px;
-        box-shadow: 7px 5px 5px #888888;
+        box-shadow: 7px 5px 5px #530202;
         font-size: 600%;
         text-align: center;
-        background-color: rgb(233, 137, 92);
+        background-color: rgba(224, 64, 36,0.9);
         color: black;
     }
     .timerText{
@@ -51,7 +55,7 @@
         font-size: 300%;
         margin-left: 1%;
         top:50%;
-        
+        color: white;
     }
     .saveTimeBtn{
         position:relative;

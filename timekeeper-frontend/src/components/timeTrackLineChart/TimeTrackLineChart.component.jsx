@@ -30,6 +30,7 @@ const TimeTrackerLineChart=()=>{
       if(Object.keys(data).length>0){
       
       for(var k in data){
+          
           xAxis.push(data[k].date)
           
           var keyLocal=data[k].totalTimeData.key

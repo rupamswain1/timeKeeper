@@ -9,7 +9,7 @@ const Header=()=>{
            
                 <div className='logoContainer'>
                     <div className='logo'>
-                        TimeKeeper
+                        TimeLogger
                     </div>
                 </div>
             
