@@ -18,9 +18,12 @@ const ToDoTaskContainer=()=>{
         setTaskName(event.target.value);
     }
     const dispatchAddTask=()=>{
-        dispatch(addTask(taskName));
-        setTaskName('');
-        document.getElementById('outlined-basic').blur();
+        if(taskName){
+            dispatch(addTask(taskName));
+            setTaskName('');
+            document.getElementById('outlined-basic').blur();
+        }
+        
     }
   
     return(
@@ -35,9 +38,10 @@ const ToDoTaskContainer=()=>{
                     <Button
                     variant="contained"
                     color="primary"
-                    className='saveTaskBtn'
+                    className={`saveTaskBtn-${taskName?'enabled':'disabled'}`}
                     startIcon={<CheckIcon />}
                     onClick={dispatchAddTask}
+                    
                     ></Button>
                     <hr></hr>
                 </div>

@@ -10,15 +10,17 @@ const NotesContainer=()=>{
     const[noteEntered,setNoteEntered]=useState('');
     
     const submit=()=>{
+        if(noteEntered.length>0){
         dispatch(addNote(noteEntered));
         setNoteEntered('');
+        }
     }
     return(
         noteDisplay?
         <div className='notesContanerMain'>
             <div className='notesInput'>
                 <input value={noteEntered} type='text' placeholder='Add Note' className='noteInputs' onChange={e=>setNoteEntered(e.target.value)}></input>
-                <button className='addNoteBtn' onClick={submit}>Add</button>
+                <button className={`addNoteBtn-${noteEntered.length>0?'enabled':'disabled'}`} onClick={submit} disabled={noteEntered.length<=0}>Add</button>
             </div>
             <div className='notesCollection'>
                 {Object.keys(notes).map((key)=>

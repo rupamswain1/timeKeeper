@@ -26,7 +26,7 @@
             color: rgb(10, 8, 8);
             font-weight: bold;
         }
-        .addNoteBtn{
+        button[class^='addNoteBtn']{
             position: relative;
             width: 20%;
             left:10%;
@@ -34,6 +34,9 @@
             color: white;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
+        }
+        button[class*='disabled']{
+            background-color: grey;
         }
     }
     .notesCollection{

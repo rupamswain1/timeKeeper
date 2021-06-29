@@ -57,11 +57,14 @@
   color: #140555;
   font-weight: bold;
 }
-.toDoMainContainer .addTaskinpputContainer .addTaskContainer .saveTaskBtn {
+.toDoMainContainer .addTaskinpputContainer .addTaskContainer button[class*=saveTaskBtn] {
   right: 11%;
   border-radius: 10px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+.toDoMainContainer .addTaskinpputContainer .addTaskContainer button[class*=disabled] {
+  color: grey;
 }
 .toDoMainContainer .addedTaskListContainer {
   border-style: solid;

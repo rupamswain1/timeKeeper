@@ -28,7 +28,7 @@
   color: #0a0808;
   font-weight: bold;
 }
-.notesContanerMain .notesInput .addNoteBtn {
+.notesContanerMain .notesInput button[class^=addNoteBtn] {
   position: relative;
   width: 20%;
   left: 10%;
@@ -36,6 +36,9 @@
   color: white;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+.notesContanerMain .notesInput button[class*=disabled] {
+  background-color: grey;
 }
 .notesContanerMain .notesCollection {
   position: relative;

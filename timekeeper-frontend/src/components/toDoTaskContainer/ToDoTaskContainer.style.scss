@@ -62,14 +62,16 @@
             color: rgb(20, 5, 85);
             font-weight:bold;
         }
-        .saveTaskBtn{
+        button[class*=saveTaskBtn]{
             right:11%;
             border-radius: 10px;
             border-top-left-radius:0px ;
             border-bottom-left-radius: 0px;
             //box-shadow: -2px 16px 15px rgb(100, 98, 98);
          }
-        
+         button[class*='disabled']{
+            color: grey;
+         }
        }
        
             
