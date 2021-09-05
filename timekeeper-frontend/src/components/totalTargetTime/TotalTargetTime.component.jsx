@@ -10,7 +10,7 @@ const TotalTargetTime=()=>{
     const {key,totalTime}=useSelector(state=>state.TotalTimeReducer);
     const {taskList}=useSelector(state=>state.TaskReducer);
     const [timeState,setTimeState]=useState([]);
-    console.log(timeState)
+    //console.log(timeState)
     let timeArr=[]
     console.log(timeArr)
     useEffect(() => {
@@ -24,7 +24,7 @@ const TotalTargetTime=()=>{
                 
             }
             console.log(timeState)
-        }, 1000);
+        }, 10000);
         return () => clearInterval(interval);
       }, [timeState.length]);
     //console.log(timeArr)

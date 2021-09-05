@@ -9,7 +9,8 @@ const NotesContainer=()=>{
     const {noteDisplay,notes} =useSelector(state=>state.NoteReducer)
     const[noteEntered,setNoteEntered]=useState('');
     
-    const submit=()=>{
+    const handleSubmit=(event)=>{
+        event.preventDefault();
         if(noteEntered.length>0){
         dispatch(addNote(noteEntered));
         setNoteEntered('');
@@ -18,10 +19,10 @@ const NotesContainer=()=>{
     return(
         noteDisplay?
         <div className='notesContanerMain'>
-            <div className='notesInput'>
+            <form onSubmit={handleSubmit} className='notesInput'>
                 <input value={noteEntered} type='text' placeholder='Add Note' className='noteInputs' onChange={e=>setNoteEntered(e.target.value)}></input>
-                <button className={`addNoteBtn-${noteEntered.length>0?'enabled':'disabled'}`} onClick={submit} disabled={noteEntered.length<=0}>Add</button>
-            </div>
+                <button className={`addNoteBtn-${noteEntered.length>0?'enabled':'disabled'}`} type="submit" disabled={noteEntered.length<=0}>Add</button>
+            </form>
             <div className='notesCollection'>
                 {Object.keys(notes).map((key)=>
                     {   return(

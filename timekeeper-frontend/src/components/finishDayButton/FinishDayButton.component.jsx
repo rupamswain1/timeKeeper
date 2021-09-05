@@ -15,13 +15,13 @@ const FinishDayButton=()=>{
     }, 500);     
 }
     return(
-        <>  
+        <React.Fragment>  
         {totalTime[key]?
             <Button className='finishDayBtn' variant="contained" color="secondary" onClick={dispatchSubmit}>
                 Finish Your Day
              </Button>
         :''}
-        </>
+        </React.Fragment>
     )
 }
 

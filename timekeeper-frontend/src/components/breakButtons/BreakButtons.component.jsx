@@ -31,7 +31,7 @@ const BreakButtons=()=>{
         
         <div className='breakbuttonsMainContainer'>
         {totalTime[totalTimeKey]?
-            <>
+            <div>
             <Tooltip title='Instagram'>
                 <button className={`brakButton-insta-${breakData['instagram'].isActive?'active':''}`} onClick={()=>dispatchAction('instagram')}><InstagramIcon style={{fill: "white"}} fontSize="large" /></button>
             </Tooltip>
@@ -78,7 +78,7 @@ const BreakButtons=()=>{
                  <button className={`brakButton-eject-${breakData['releaseAll'].isActive?'active':''}`} onClick={()=>dispatchAction('releaseAll')}><EjectIcon style={{fill: "white"}} fontSize="large"/></button>
             </Tooltip>
             
-            </>:''}
+            </div>:''}
         </div>
         )
 }

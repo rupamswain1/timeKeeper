@@ -7,13 +7,17 @@ import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
 import CancelIcon from '@material-ui/icons/Cancel';
 import Tooltip from '@material-ui/core/Tooltip';
 const AddedTask=({completed,bgColor,taskName,paused,percentage,type,time})=>{
-    
+    console.log(taskName+' '+paused)
     const dispatch=useDispatch();
+    let backgrouColorForStart="#e0e0de";
+    if(paused===false){
+        backgrouColorForStart="#c1edb4";
+    }
     const containerStyle={
         position:'relative',
         height:'15%',
         width:'100%',
-        backgroundColor: "#e0e0de",
+        backgroundColor: backgrouColorForStart,
         borderRadius: '10px',
         'margin-top':5,
         display:'flex',
@@ -127,4 +131,4 @@ const AddedTask=({completed,bgColor,taskName,paused,percentage,type,time})=>{
     )
 }
 
-export default AddedTask;
+export default React.memo(AddedTask);

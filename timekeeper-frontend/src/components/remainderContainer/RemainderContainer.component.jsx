@@ -44,16 +44,10 @@ const RemainderContainer=()=>{
             }
         }
 
-    }
-        
-        
-   
-
-    
-   
+    }   
     console.log((time-GetTimeInSeconds())/60)
     return(
-        <>
+        <React.Fragment>
         {totalTime[key]!==undefined && totalTime[key][GetDate()]?
         <div className='remainderMainContainer'>
             <span className='headingremainder'>Remainder List</span>
@@ -117,7 +111,7 @@ const RemainderContainer=()=>{
 
         </div>
         :''}
-        </>
+        </React.Fragment>
     )
 }
 export default RemainderContainer;

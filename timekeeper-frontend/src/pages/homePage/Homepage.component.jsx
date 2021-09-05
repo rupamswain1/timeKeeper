@@ -48,7 +48,7 @@ const HomePage=()=>{
                 <TotalTargetTime/>
             </div>
             
-                <>
+            <React.Fragment>
                 <div className='switchButtonsContainer'>
                     <BreakButtons/>
                 </div>
@@ -62,7 +62,7 @@ const HomePage=()=>{
                 <div className='reportButtonContainer'>
                    <FinishDayButton/>
                 </div>
-            </>
+            </React.Fragment>
             
             
             <div className='graphsContainer'>

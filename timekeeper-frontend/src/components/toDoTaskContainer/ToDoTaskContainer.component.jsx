@@ -25,26 +25,32 @@ const ToDoTaskContainer=()=>{
         }
         
     }
+
+    const handleSubmit=(event)=>{
+        event.preventDefault();
+        dispatchAddTask();
+    }
   
     return(
-        <>
+        <React.Fragment>
         {totalTime[key]!==undefined && totalTime[key][GetDate()]?
         <div className='toDoMainContainer'>
             <span className='headingToDo'>Task List</span>
             <div className='addTaskinpputContainer'>
-                <div className='addTaskContainer'>
+                <form onSubmit={handleSubmit} className='addTaskContainer'>
+                    
                     <input value={taskName} onChange={setTask} className='addTaskText' id="outlined-basic" placeholder="Add Task" variant="outlined" color='primary'></input>
                    
                     <Button
                     variant="contained"
+                    type="submit"
                     color="primary"
                     className={`saveTaskBtn-${taskName?'enabled':'disabled'}`}
-                    startIcon={<CheckIcon />}
-                    onClick={dispatchAddTask}
-                    
+                    startIcon={<CheckIcon />}                    
                     ></Button>
+                    
                     <hr></hr>
-                </div>
+                </form>
             </div>
             <div className='addedTaskListContainer'>
 
@@ -60,7 +66,7 @@ const ToDoTaskContainer=()=>{
 
         </div>
         :''}
-        </>
+        </React.Fragment>
     )
 }
 export default ToDoTaskContainer;

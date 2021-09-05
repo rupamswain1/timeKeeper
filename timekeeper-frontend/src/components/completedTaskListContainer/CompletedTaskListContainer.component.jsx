@@ -8,7 +8,7 @@ const CompletedTaskListContainer=()=>{
     const {taskList}=useSelector(state=>state.TaskReducer);
     const {key,totalTime}=useSelector(state=>state.TotalTimeReducer);
     return(
-        <>
+        <React.Fragment>
         {totalTime[key]!==undefined && totalTime[key][GetDate()]?
         <div className='completedTaskListMainContainer'>
             <span className='headingCompleted'>Completed Task List</span>
@@ -27,7 +27,7 @@ const CompletedTaskListContainer=()=>{
             </div>
         </div>
         :''}
-        </>
+        </React.Fragment>
     )
 }
 export default CompletedTaskListContainer; 
