@@ -12,7 +12,7 @@ const TotalTargetTime=()=>{
     const [timeState,setTimeState]=useState([]);
     //console.log(timeState)
     let timeArr=[]
-    console.log(timeArr)
+    //console.log(timeArr)
     useEffect(() => {
         validatePrevValue();
         const interval = setInterval(() => {
@@ -23,8 +23,8 @@ const TotalTargetTime=()=>{
                 setTimeState(timeArr)
                 
             }
-            console.log(timeState)
-        }, 10000);
+            //console.log(timeState)
+        }, 1000);
         return () => clearInterval(interval);
       }, [timeState.length]);
     //console.log(timeArr)
@@ -51,7 +51,7 @@ const TotalTargetTime=()=>{
                 document.getElementById(parseInt(event.target.name)).blur();
                 document.getElementById(parseInt(event.target.name)).disabled=true;
             }
-            console.log(timeArr)
+            //console.log(timeArr)
            //console.log((parseInt(timeArr[0])*10+(parseInt(timeArr[1])))*60*60)    
     }
     const clearTxt=event=>{
@@ -65,10 +65,10 @@ const TotalTargetTime=()=>{
             return(date.toString()+month.toString()+year.toString());
     }
     const submitTime=()=>{
-        console.log(timeArr)
+        //console.log(timeArr)
         setTimeState(timeArr)
         const totalSeconds=ArrayToSeconds(timeArr);
-        console.log(totalSeconds)
+        //console.log(totalSeconds)
         dispatch(saveTotalTime(totalSeconds))
         
            

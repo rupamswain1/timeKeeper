@@ -39,7 +39,7 @@ const TimeTrackerLineChart=()=>{
              originalTimeData.data.push((data[k].totalTimeData.originalTime[keyLocal][origTimeKey]/3600).toFixed(3))
            }
            for(var totalTimeKey in data[k].totalTimeData.totalTime[keyLocal]){
-                console.log(data[k].totalTimeData.totalTime[keyLocal][totalTimeKey])
+                //console.log(data[k].totalTimeData.totalTime[keyLocal][totalTimeKey])
                var actualTime=0;
              if(data[k].totalTimeData.totalTime[keyLocal][totalTimeKey]<0){
                  actualTime=(-1*data[k].totalTimeData.totalTime[keyLocal][totalTimeKey])+data[k].totalTimeData.originalTime[keyLocal][totalTimeKey]
@@ -51,7 +51,7 @@ const TimeTrackerLineChart=()=>{
            }
        }
       dataSet=[originalTimeData,TotalTimeData]
-      console.log(dataSet)
+      //console.log(dataSet)
    
       display=true
     }

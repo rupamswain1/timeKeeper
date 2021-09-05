@@ -17,7 +17,7 @@ function* pauseTaskEffects({type,taskName}){
 
 function* completeTaskEffects({type,taskName}){
     const taskReducer=yield select(state=>state.TaskReducer)
-    console.log(taskReducer.activeTask)
+    //console.log(taskReducer.activeTask)
     if(taskReducer.activeTask===null){
         yield put(pauseCountDown());
     }

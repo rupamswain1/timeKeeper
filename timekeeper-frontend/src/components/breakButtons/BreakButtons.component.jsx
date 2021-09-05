@@ -21,7 +21,7 @@ const BreakButtons=()=>{
     const totalTimeKey=totalTimeReducer.key;
     const {totalTime}=totalTimeReducer;
     const dispatch=useDispatch();
-    console.log('call')
+    //('call')
 
     const dispatchAction=(buttonName)=>{
         

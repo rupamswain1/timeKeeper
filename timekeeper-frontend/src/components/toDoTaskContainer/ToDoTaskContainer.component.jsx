@@ -13,7 +13,7 @@ const ToDoTaskContainer=()=>{
     const {key,totalTime}=useSelector(state=>state.TotalTimeReducer);
     const dispatch=useDispatch();
     const[taskName,setTaskName]=useState();
-    console.log(taskList)
+    //console.log(taskList)
     const setTask=(event)=>{
         setTaskName(event.target.value);
     }

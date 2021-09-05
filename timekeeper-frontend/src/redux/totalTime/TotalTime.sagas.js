@@ -12,7 +12,7 @@ function* updateCountDown(){
     var sec=d.getSeconds(); 
     const {key,countDownProgress,originalTime,lastUpdatedTime}=yield select(state=>state.TotalTimeReducer)
     const taskReducer=yield select(state=>state.TaskReducer)
-    console.log(taskReducer)
+    //console.log(taskReducer)
     //If the time is 23:59:58, it will save all task. as we are using the key to identify time ofter 00:00:00 key will change, hence breaking the function
     if(parseInt(hr)===23 && parseInt(min)===59 && parseInt(sec)===58){
         window.alert('The day is about to end, and a new day will begin, We will Save your progress so far');
@@ -33,7 +33,7 @@ function* updateCountDown(){
     //updates the time of main timer as well as the tasks
     if(countDownProgress){
         if(lastUpdatedTime===null){
-            console.log('in saga')
+            //console.log('in saga')
             yield put(updateLastRunSec(seconds))
             yield put(startCountDown(1))
             

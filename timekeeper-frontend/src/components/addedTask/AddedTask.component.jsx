@@ -7,7 +7,7 @@ import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
 import CancelIcon from '@material-ui/icons/Cancel';
 import Tooltip from '@material-ui/core/Tooltip';
 const AddedTask=({completed,bgColor,taskName,paused,percentage,type,time})=>{
-    console.log(taskName+' '+paused)
+    //console.log(taskName+' '+paused)
     const dispatch=useDispatch();
     let backgrouColorForStart="#e0e0de";
     if(paused===false){

@@ -16,7 +16,7 @@ const TimeComparisonBarChart=()=>{
       //console.log(Object.keys(data[key]).length)
       if(Object.keys(data).length>0){
       let obj=data[key].taskData;
-      console.log(obj)
+      //console.log(obj)
       for(var k in obj){
           chartLabels.push(k.toUpperCase());
           

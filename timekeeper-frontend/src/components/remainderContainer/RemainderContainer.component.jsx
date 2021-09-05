@@ -24,7 +24,7 @@ const RemainderContainer=()=>{
     const [time,setTime]=useState();
     const [repeat,setRepeat]=useState(false);
     const dispatch=useDispatch();
-    console.log(taskList)
+    //console.log(taskList)
     
     const dispatchAddRemainder=()=>{
         dispatch(addRemainder(remainderName,time,repeat));
@@ -36,7 +36,7 @@ const RemainderContainer=()=>{
     let timeError=undefined; 
     const timeValidation=dateTime=>{
         setTime(Math.floor(new Date(dateTime).getTime()/1000))
-        console.log(((time-GetTimeInSeconds())/60))
+        //console.log(((time-GetTimeInSeconds())/60))
         if(time!==undefined){
             if(((time-GetTimeInSeconds())/60)<0){
                 timeError=true;
@@ -45,7 +45,7 @@ const RemainderContainer=()=>{
         }
 
     }   
-    console.log((time-GetTimeInSeconds())/60)
+    //console.log((time-GetTimeInSeconds())/60)
     return(
         <React.Fragment>
         {totalTime[key]!==undefined && totalTime[key][GetDate()]?

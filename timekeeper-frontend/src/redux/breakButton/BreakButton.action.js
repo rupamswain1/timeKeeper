@@ -1,7 +1,7 @@
 import BreakButtonType from './BreakButton.type';
 
 export const startBreak=(breakName)=>{
-    console.log(breakName)
+    //console.log(breakName)
     return{
     type:BreakButtonType.START_BREAK,
     breakName:breakName,

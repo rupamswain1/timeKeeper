@@ -23,7 +23,7 @@ export const BreakButtonReducer=(state=INITIAL_STATE,action)=>{
         case BreakButtonType.START_BREAK:
             let prevActive='';
             let btnName=action.breakName;
-            console.log(btnName)
+            //console.log(btnName)
             if(action.breakName!=='releaseAll'){
                 
                 state[state.currentActive].isActive=false;
@@ -50,8 +50,8 @@ export const BreakButtonReducer=(state=INITIAL_STATE,action)=>{
             }
         case BreakButtonType.GET_BREAK_COLOR:
             let color=state[action.breakName].color;
-            console.log(color)
-            console.log(state[action.breakName])
+            //console.log(color)
+            //console.log(state[action.breakName])
             return color;
         default:
             return state;

@@ -15,7 +15,7 @@ const DoughnutChart=()=>{
       //console.log(Object.keys(data[key]).length)
       if(Object.keys(data).length>0){
       let obj=data[key].taskData;
-      console.log(obj)
+      //console.log(obj)
       for(var k in obj){
           chartLabels.push(k.toUpperCase());
           
@@ -24,8 +24,8 @@ const DoughnutChart=()=>{
           borderColors.push('rgb(255,255,255)')
           }
       }
-      console.log(taskHour)
-      console.log(bgColors)
+      //console.log(taskHour)
+      //console.log(bgColors)
     
       Doughnutdata = {
           labels: chartLabels,

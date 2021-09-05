@@ -54,8 +54,8 @@ export const TaskReducer=(state=INITIAL_STATUS,action)=>{
             if(action.seconds!==undefined && action.totalTime!==undefined && state.taskList[action.taskName].type!=='remainder'){
 
                 state.taskList[action.taskName].time=parseInt(state.taskList[action.taskName].time)+parseInt(action.seconds);
-                console.log(action.totalTime);
-                console.log(state.taskList[action.taskName].time)
+                //console.log(action.totalTime);
+                //console.log(state.taskList[action.taskName].time)
                 
                 state.taskList[action.taskName].percentage=(((state.taskList[action.taskName].time)/(parseInt(action.totalTime)))*parseInt(100)).toFixed(1);
             }

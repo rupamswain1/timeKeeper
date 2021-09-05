@@ -16,7 +16,7 @@ export const SecondsToArray=(timeInSec)=>{
     }
     let totalSeconds=parseInt(timeInSec);
     let hour=Math.floor(totalSeconds/3600);
-    console.log(hour)
+    //console.log(hour)
     let hourSec=hour*3600;
     let minutes=Math.floor((totalSeconds-(hourSec))/60);
     let seconds=totalSeconds-(hourSec)-(minutes*60);
@@ -46,7 +46,7 @@ export const SecondsToArray=(timeInSec)=>{
         timeArr[4]=strSeconds.substr(0,1);
         timeArr[5]=strSeconds.substr(1,);
     }
-    console.log(timeArr);
+    //console.log(timeArr);
     return timeArr;
 }
 //console.log(SecondsToArray(-3))

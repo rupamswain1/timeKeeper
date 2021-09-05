@@ -6,9 +6,9 @@ import {removeAllTask,completeAll} from '../task/Task.action';
 import {removeAllTime} from '../totalTime/TotalTime.action';
 function* startSubmitProcess(){
 
-    console.log(1)
+    //console.log(1)
     yield put(startBreak('releaseAll'));
-    console.log(2)
+    //console.log(2)
     yield put(completeAll())
     const taskReducer=yield select(state=>state.TaskReducer.taskList)
     const breakButtonReducer=yield select(state=>state.BreakButtonReducer)
